@@ -1,0 +1,51 @@
+<!doctype html>
+ 
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery Test</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+  <style>
+	#draggable { width: 150px; height: 150px; padding: 0.5em; }
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#draggable").draggable();
+
+	$("#btn1").click(function () {
+	 	$("#dialog").dialog();
+	});
+    
+    $("#anim1").click(function () { 
+      $(this).slideUp(); 
+    });
+    $("#anim1").hover(function () {
+      $(this).addClass("hilite");
+    }, function () {
+      $(this).removeClass("hilite");
+    });
+  });
+  </script>
+</head>
+<body>
+ 
+<img id="draggable" src="Penguin.jpg" alt="penguin" class="ui-widget-content" />
+
+<img id="btn1" src="Penguin.jpg" alt="penguin" style=""/>
+
+<div id="dialog" title="test" style="display: none;">
+	<p>のどが渇きました</p>
+</div>
+ 
+
+<p id="anim1">First Paragraph</p>
+<p id="anim1">Second Paragraph</p>
+<p id="anim1">Yet one more Paragraph</p>
+
+
+</body>
+</html>
