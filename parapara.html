@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<title>パラパラテスト</title>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/jquery.backgroundpos.min.js"></script>
+		<script type="text/javascript" src="js/jquery.limitAnime.js"></script>
+
+		<style type="text/css">
+		body { background-color: #090 }
+		.content { text-align: center; }
+		
+		#cat01,
+		#cat02,
+		#cat03 {
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+			width: 83px;
+			height: 165px;
+			background: url('images/01.png') no-repeat 0 0;
+			margin: 0 auto;
+		}
+
+		.btn {
+			padding: 50px 0;
+			text-align: center;
+		}
+		.btn a {
+			margin: 0 10px;
+			display: inline-block;
+			color: #FFF;
+			padding: 5px;
+			background: #F60;
+			text-decoration: none;
+		}
+		</style>
+
+		<!-- [ SCRIPTS ] --> 
+		<script type="text/javascript">
+		$(function() {
+			var $cat1 = $('#cat01').limitAnime({
+				width: 83,
+				frames: 6,
+				loop: true,
+				delay: 80
+			});
+
+			var $cat2 = $('#cat02').limitAnime({
+				width: 83,
+				frames: 6,
+				loop: true,
+				delay: 200
+			});
+
+			var $cat3 = $('#cat03').limitAnime({
+				width: 83,
+				frames: 6,
+				loop: false,
+				delay: 1000
+			});
+		
+			$('.btn_start').on('click',function() {
+				$cat1.startAnimate();
+				$cat2.startAnimate();
+				$cat3.startAnimate();
+			});
+			$('.btn_stop').on('click',function() {
+				$cat1.stopAnimate();
+				$cat2.stopAnimate();
+				$cat3.stopAnimate();
+			});
+		});
+		</script>
+
+	</head>
+	<body>
+
+	<div class="content">
+		<div id="cat01"></div>
+		<div id="cat02"></div>
+		<div id="cat03"></div>
+	</div>
+	<div class="btn">
+		<a href="#" class="btn_start">START</a>
+		<a href="#" class="btn_stop">STOP</a>
+	</div>
+
+	<div id="dialog" title="test" style="display: none;">
+		<p>のどが渇きました</p>
+	</div>
+
+	</body>
+</html>
+
