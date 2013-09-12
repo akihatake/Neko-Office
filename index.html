@@ -65,6 +65,7 @@
 			height: 176px;
 			top: 30px;
 			left: 30px;
+			display: none;
 		}
 		#nemui {
 			position: absolute;
@@ -86,6 +87,9 @@
 
 		<script>
 		$(document).ready(function(){
+			var msg1 = "徒然なるままに、日暮、、、、、";
+			var msg2 = "雑学博士：　その１";
+			var msg3 = "雑学博士：　その２";
 			
 			$(function(){
 				var $cat1 = $('#pyon').limitAnime({
@@ -101,8 +105,17 @@
 					$cat1.stopAnimate();
 				});
 
+				// コメント表示
+				$('#nemui').click(function(){
+					//alert(msg1);
+					var result = $('#hukidasi').is(':visible')
+					if (result){
+						$('#hukidasi').hide();
+					} else {
+						$('#hukidasi').show('slow');
+					}
+				});
 			});
-
 		});
 
 		</script>
@@ -147,7 +160,9 @@
 			<div id="haikei">
 				<div id="neko"></div>
 				<div id="pyon"></div>
-				<div id="hukidasi"></div>
+				<div id="hukidasi">
+						ああああああああああああああああ
+				</div>
 				<div id="nemui"></div>
 			</div>
 
