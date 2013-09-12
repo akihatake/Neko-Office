@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>nekosan</title>
+		<meta name="description" content="IS-JUKU">
+		<meta name="author" content="HATAKEYAMAK-E">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+		<!-- JQuery -->
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="js/jquery.backgroundpos.min.js"></script>
+		<script src="js/jquery.limitAnime.js"></script>
+
+		<style>
+		#haikei {
+			margin: 0 auto;
+			position: relative;
+			background: url('images/haikei.png') no-repeat 0 0;
+			width: 480px;
+			height: 360px;
+		}
+		#neko {
+			position: absolute;
+			background-image: url('images/neko.png');
+			background-repeat: no-repeat;
+			width: 126px;
+			height: 124px;
+			top: 120px;
+			left: 350px;
+		}
+		#pyon {
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+			position: absolute;
+			background-image: url('images/pyon.png');
+			background-repeat: no-repeat;
+			width: 80px;
+			height: 117px;
+			top: 210px;
+			left: 340px;
+		}
+		#hukidasi {
+			position: absolute;
+			background-image: url('images/hukidasi.png');
+			background-repeat: no-repeat;
+			width: 306px;
+			height: 176px;
+			top: 30px;
+			left: 30px;
+		}
+		#nemui {
+			position: absolute;
+			background-image: url('images/nemui.gif');
+			background-repeat: no-repeat;
+			width: 200px;
+			height: 200px;
+			top: 100px;
+			left: 340px;
+		}
+		
+		#footer {
+			padding-top: 1em;
+			background-color: gray;
+			text-align: right;
+		}
+		
+		</style>
+
+		<script>
+		$(document).ready(function(){
+			
+			$(function(){
+				var $cat1 = $('#pyon').limitAnime({
+					width: 80,
+					frames: 2,
+					loop: true,
+					delay: 80
+				});
+
+				// ぴょんクリック
+				$("#pyon").click(function(){
+					$cat1.startAnimate();
+					$cat1.stopAnimate();
+				});
+
+			});
+
+		});
+
+		</script>
+
+
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="js/html5shiv.js"></script>
+	      <script src="js/respond.min.js"></script>
+		  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> 
+	    <![endif]-->
+	</head>
+
+	<body>
+
+		<div class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">nekosan</a>
+				</div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+			</div>
+		</div>
+
+    <div class="container">
+
+      <div>
+        <h1>nekosan</h1>
+        <p class="lead">猫の受付</p>
+      </div>
+
+			<div id="haikei">
+				<div id="neko"></div>
+				<div id="pyon"></div>
+				<div id="hukidasi"></div>
+				<div id="nemui"></div>
+			</div>
+
+			<!-- フッター -->
+			<div id="footer" class="container">
+				<p>
+					&copy; Copyright  by HATAKEYAMA-KE
+				</p>
+			</div>
+
+    </div>
+
+	</body>
+</html>
