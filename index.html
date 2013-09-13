@@ -57,15 +57,34 @@
 			top: 210px;
 			left: 340px;
 		}
+		#clock {
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+			position: absolute;
+			background-image: url('images/tokei.png');
+			background-repeat: no-repeat;
+			width: 110px;
+			height: 55px;
+			top: 10px;
+			left: 150px;
+		}
 		#hukidasi {
 			position: absolute;
 			background-image: url('images/hukidasi.png');
 			background-repeat: no-repeat;
-			width: 306px;
-			height: 176px;
+			width: 280px;
+			height: 150px;
 			top: 30px;
-			left: 30px;
+			left: 50px;
 			display: none;
+		}
+		#hukidasi p {
+			margin-top: 15px;
+			margin-bottom: 15px;
+			margin-left: 15px;
+			margin-right: 35px;
+			overflow: hidden;
 		}
 		#nemui {
 			position: absolute;
@@ -86,36 +105,58 @@
 		</style>
 
 		<script>
+		msg1 = "じゅげむ、じゅげむ、チチンプイプイ。折り返しのテストだよ、日暮、、、、、ううううううういいいいいいいいいいいいいぁーーーーーーーーーいやーーーーーーーーーーーーーーーーーーーん";
+		msg2 = "雑学博士：　その１";
+		msg3 = "雑学博士：　その２";
+
 		$(document).ready(function(){
-			var msg1 = "徒然なるままに、日暮、、、、、";
-			var msg2 = "雑学博士：　その１";
-			var msg3 = "雑学博士：　その２";
 			
+			// 時計クリック
 			$(function(){
-				var $cat1 = $('#pyon').limitAnime({
+				var $anim2 = $('#clock').limitAnime({
+					width: 110,
+					frames: 2,
+					loop: true,
+					delay: 80
+				});
+
+				$("#clock").click(function() {
+					$anim2.startAnimate();
+					$anim2.stopAnimate();
+				});
+			});
+
+			// ぴょんクリック
+			$(function(){
+				var $anim1 = $('#pyon').limitAnime({
 					width: 80,
 					frames: 2,
 					loop: true,
 					delay: 80
 				});
 
-				// ぴょんクリック
 				$("#pyon").click(function(){
-					$cat1.startAnimate();
-					$cat1.stopAnimate();
+					$anim1.startAnimate();
+					$anim1.stopAnimate();
 				});
+			});
 
-				// コメント表示
+
+
+
+			// コメント表示
+			$(function(){
 				$('#nemui').click(function(){
-					//alert(msg1);
-					var result = $('#hukidasi').is(':visible')
+					var result = $('#hukidasi').is(':visible');
 					if (result){
 						$('#hukidasi').hide();
 					} else {
 						$('#hukidasi').show('slow');
 					}
 				});
+
 			});
+
 		});
 
 		</script>
@@ -159,9 +200,12 @@
 
 			<div id="haikei">
 				<div id="neko"></div>
+				<div id="clock"></div>
 				<div id="pyon"></div>
 				<div id="hukidasi">
-						ああああああああああああああああ
+					<p>
+						<script>document.writeln(msg1);</script>
+					</p>
 				</div>
 				<div id="nemui"></div>
 			</div>
