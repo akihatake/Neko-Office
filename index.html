@@ -38,24 +38,36 @@
 		}
 		#neko {
 			position: absolute;
-			background-image: url('images/neko.png');
+			background-image: url('images/neko-anime.gif');
 			background-repeat: no-repeat;
-			width: 126px;
-			height: 124px;
-			top: 120px;
-			left: 350px;
+			width: 100px;
+			height: 120px;
+			top: 133px;
+			left: 340px;
 		}
-		#pyon {
+		#poster {
 			display: inline-block;
 			*display: inline;
 			*zoom: 1;
 			position: absolute;
-			background-image: url('images/pyon.png');
+			background-image: url('images/poster.png');
 			background-repeat: no-repeat;
-			width: 80px;
-			height: 117px;
-			top: 210px;
-			left: 340px;
+			width: 135px;
+			height: 145px;
+			top: 0px;
+			left: 400px;
+		}
+		#kenjisan {
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+			position: absolute;
+			background-image: url('images/kenjisan.png');
+			background-repeat: no-repeat;
+			width: 55px;
+			height: 77px;
+			top: 80px;
+			left: 80px;
 		}
 		#clock {
 			display: inline-block;
@@ -86,13 +98,16 @@
 			margin-right: 35px;
 			overflow: hidden;
 		}
-		#nemui {
+		#pyon {
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
 			position: absolute;
-			background-image: url('images/nemui.gif');
+			background-image: url('images/pyon.png');
 			background-repeat: no-repeat;
-			width: 200px;
-			height: 200px;
-			top: 100px;
+			width: 80px;
+			height: 117px;
+			top: 210px;
 			left: 340px;
 		}
 		
@@ -105,12 +120,30 @@
 		</style>
 
 		<script>
-		msg1 = "じゅげむ、じゅげむ、チチンプイプイ。折り返しのテストだよ、日暮、、、、、ううううううういいいいいいいいいいいいいぁーーーーーーーーーいやーーーーーーーーーーーーーーーーーーーん";
-		msg2 = "雑学博士：　その１";
-		msg3 = "雑学博士：　その２";
-
+	
+		msg = "";
+		
 		$(document).ready(function(){
-			
+		var msgs = new Array();
+		var msgs[0] = "世界で一番長い駅名は、イギリスのウェールズ北部にある「Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch」駅";
+		var msgs[1] = "アサイーのポリフェノールはブルーベリーの18倍";
+		var msgs[2] = "ねむいです";
+
+			// けんじクリック
+			$(function(){
+				var $anim1 = $('#kenjisan').limitAnime({
+					width: 55,
+					frames: 2,
+					loop: true,
+					delay: 80
+				});
+
+				$("#kenjisan").click(function() {
+					$anim1.startAnimate();
+					$anim1.stopAnimate();
+				});
+			});
+
 			// 時計クリック
 			$(function(){
 				var $anim2 = $('#clock').limitAnime({
@@ -126,9 +159,37 @@
 				});
 			});
 
+			// ポスタークリック
+			$(function(){
+				var $anim3 = $('#poster').limitAnime({
+					width: 135,
+					frames: 2,
+					loop: true,
+					delay: 80
+				});
+
+				$("#poster").click(function() {
+					$anim3.startAnimate();
+					$anim3.stopAnimate();
+				});
+			});
+
+			// コメント表示
+			$(function(){
+				$('#neko').click(function(){
+					var result = $('#hukidasi').is(':visible');
+					if (result){
+						$('#hukidasi').hide();
+					} else {
+						msg = "仮入れ";
+						$('#hukidasi').show('slow');
+					}
+				});
+			});
+
 			// ぴょんクリック
 			$(function(){
-				var $anim1 = $('#pyon').limitAnime({
+				var $anim4 = $('#pyon').limitAnime({
 					width: 80,
 					frames: 2,
 					loop: true,
@@ -136,25 +197,9 @@
 				});
 
 				$("#pyon").click(function(){
-					$anim1.startAnimate();
-					$anim1.stopAnimate();
+					$anim4.startAnimate();
+					$anim4.stopAnimate();
 				});
-			});
-
-
-
-
-			// コメント表示
-			$(function(){
-				$('#nemui').click(function(){
-					var result = $('#hukidasi').is(':visible');
-					if (result){
-						$('#hukidasi').hide();
-					} else {
-						$('#hukidasi').show('slow');
-					}
-				});
-
 			});
 
 		});
@@ -201,13 +246,15 @@
 			<div id="haikei">
 				<div id="neko"></div>
 				<div id="clock"></div>
+				<div id="kenjisan"></div>
+				<div id="poster"></div>
 				<div id="pyon"></div>
 				<div id="hukidasi">
 					<p>
-						<script>document.writeln(msg1);</script>
+						<script>document.writeln(msg);</script>
 					</p>
 				</div>
-				<div id="nemui"></div>
+				<div id="pyon"></div>
 			</div>
 
 			<!-- フッター -->
