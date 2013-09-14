@@ -17,10 +17,6 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
 		<!-- JQuery -->
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -28,106 +24,22 @@
 		<script src="js/jquery.backgroundpos.min.js"></script>
 		<script src="js/jquery.limitAnime.js"></script>
 
-		<style>
-		#haikei {
-			margin: 0 auto;
-			position: relative;
-			background: url('images/haikei.png') no-repeat 0 0;
-			width: 480px;
-			height: 360px;
-		}
-		#neko {
-			position: absolute;
-			background-image: url('images/neko-anime.gif');
-			background-repeat: no-repeat;
-			width: 100px;
-			height: 120px;
-			top: 133px;
-			left: 340px;
-		}
-		#poster {
-			display: inline-block;
-			*display: inline;
-			*zoom: 1;
-			position: absolute;
-			background-image: url('images/poster.png');
-			background-repeat: no-repeat;
-			width: 135px;
-			height: 145px;
-			top: 0px;
-			left: 400px;
-		}
-		#kenjisan {
-			display: inline-block;
-			*display: inline;
-			*zoom: 1;
-			position: absolute;
-			background-image: url('images/kenjisan.png');
-			background-repeat: no-repeat;
-			width: 55px;
-			height: 77px;
-			top: 80px;
-			left: 80px;
-		}
-		#clock {
-			display: inline-block;
-			*display: inline;
-			*zoom: 1;
-			position: absolute;
-			background-image: url('images/tokei.png');
-			background-repeat: no-repeat;
-			width: 110px;
-			height: 55px;
-			top: 10px;
-			left: 150px;
-		}
-		#hukidasi {
-			position: absolute;
-			background-image: url('images/hukidasi.png');
-			background-repeat: no-repeat;
-			width: 280px;
-			height: 150px;
-			top: 30px;
-			left: 50px;
-			display: none;
-		}
-		#hukidasi p {
-			margin-top: 15px;
-			margin-bottom: 15px;
-			margin-left: 15px;
-			margin-right: 35px;
-			overflow: hidden;
-		}
-		#pyon {
-			display: inline-block;
-			*display: inline;
-			*zoom: 1;
-			position: absolute;
-			background-image: url('images/pyon.png');
-			background-repeat: no-repeat;
-			width: 80px;
-			height: 117px;
-			top: 210px;
-			left: 340px;
-		}
-		
-		#footer {
-			padding-top: 1em;
-			background-color: gray;
-			text-align: right;
-		}
-		
-		</style>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+		<!-- main -->
+		<link rel="stylesheet" href="nekojimusho.css" media="screen">
+
 
 		<script>
-	
 		msg = "";
 		
 		$(document).ready(function(){
-		var msgs = new Array();
-		var msgs[0] = "世界で一番長い駅名は、イギリスのウェールズ北部にある「Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch」駅";
-		var msgs[1] = "アサイーのポリフェノールはブルーベリーの18倍";
-		var msgs[2] = "ねむいです";
+			var msgs = new Array();
+			var msgs[0] = "世界で一番長い駅名は、イギリスのウェールズ北部にある「Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch」駅";
+			var msgs[1] = "アサイーのポリフェノールはブルーベリーの18倍";
+			var msgs[2] = "ねむいです";
 
 			// けんじクリック
 			$(function(){
@@ -248,7 +160,8 @@
 				<div id="clock"></div>
 				<div id="kenjisan"></div>
 				<div id="poster"></div>
-				<div id="pyon"></div>
+				<div id="paper"></div>
+				<div id="annai"></div>
 				<div id="hukidasi">
 					<p>
 						<script>document.writeln(msg);</script>

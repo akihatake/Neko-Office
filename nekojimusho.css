@@ -1,0 +1,131 @@
+/* 背景 */
+#haikei {
+	margin: 0 auto;
+	position: relative;
+	background: url('images/haikei.png') no-repeat 0 0;
+	width: 480px;
+	height: 360px;
+}
+
+
+
+/*
+ * アニメパーツ
+ */
+
+/* 猫 */
+#neko {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: absolute;
+	background-image: url('images/neko-anime.gif');
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 120px;
+	top: 133px;
+	left: 320px;
+}
+
+/* ポスター */
+#poster {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: absolute;
+	background-image: url('images/poster.png');
+	background-repeat: no-repeat;
+	width: 135px;
+	height: 145px;
+	top: 5px;
+	left: 350px;
+}
+
+/* 宮沢賢治 */
+#kenjisan {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: absolute;
+	background-image: url('images/kenjisan.png');
+	background-repeat: no-repeat;
+	width: 55px;
+	height: 77px;
+	top: 80px;
+	left: 80px;
+}
+
+/* 時計 */
+#clock {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: absolute;
+	background-image: url('images/tokei.png');
+	background-repeat: no-repeat;
+	width: 110px;
+	height: 55px;
+	top: 10px;
+	left: 150px;
+}
+
+/* 書類 */
+#paper {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: absolute;
+	background-image: url('images/paper.png');
+	background-repeat: no-repeat;
+	width: 90px;
+	height: 110px;
+	top: 210px;
+	left: 340px;
+}
+
+/* 案内 */
+#annai {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: absolute;
+	background-image: url('images/annai.png');
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 70px;
+	top: 230px;
+	left: 200px;
+}
+
+
+/*
+ * 猫のコメント枠
+ */
+#hukidasi {
+	position: absolute;
+	background-image: url('images/hukidasi.png');
+	background-repeat: no-repeat;
+	width: 280px;
+	height: 150px;
+	top: 30px;
+	left: 50px;
+	display: none;
+}
+#hukidasi p {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	margin-right: 35px;
+	overflow: hidden;
+}
+
+
+/*
+ * フッターデザイン
+ */		
+#footer {
+	padding-top: 1em;
+	background-color: gray;
+	text-align: right;
+}
+
