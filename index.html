@@ -7,11 +7,10 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>nekosan</title>
+		<title>猫の事務所</title>
 		<meta name="description" content="IS-JUKU">
 		<meta name="author" content="HATAKEYAMAK-E">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico">
@@ -30,105 +29,17 @@
 
 		<!-- main -->
 		<link rel="stylesheet" href="nekojimusho.css" media="screen">
+		<script src="nekojimusho.js"></script>
 
-
-		<script>
-		msg = "";
-		
-		$(document).ready(function(){
-			var msgs = new Array();
-			var msgs[0] = "世界で一番長い駅名は、イギリスのウェールズ北部にある「Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch」駅";
-			var msgs[1] = "アサイーのポリフェノールはブルーベリーの18倍";
-			var msgs[2] = "ねむいです";
-
-			// けんじクリック
-			$(function(){
-				var $anim1 = $('#kenjisan').limitAnime({
-					width: 55,
-					frames: 2,
-					loop: true,
-					delay: 80
-				});
-
-				$("#kenjisan").click(function() {
-					$anim1.startAnimate();
-					$anim1.stopAnimate();
-				});
-			});
-
-			// 時計クリック
-			$(function(){
-				var $anim2 = $('#clock').limitAnime({
-					width: 110,
-					frames: 2,
-					loop: true,
-					delay: 80
-				});
-
-				$("#clock").click(function() {
-					$anim2.startAnimate();
-					$anim2.stopAnimate();
-				});
-			});
-
-			// ポスタークリック
-			$(function(){
-				var $anim3 = $('#poster').limitAnime({
-					width: 135,
-					frames: 2,
-					loop: true,
-					delay: 80
-				});
-
-				$("#poster").click(function() {
-					$anim3.startAnimate();
-					$anim3.stopAnimate();
-				});
-			});
-
-			// コメント表示
-			$(function(){
-				$('#neko').click(function(){
-					var result = $('#hukidasi').is(':visible');
-					if (result){
-						$('#hukidasi').hide();
-					} else {
-						msg = "仮入れ";
-						$('#hukidasi').show('slow');
-					}
-				});
-			});
-
-			// ぴょんクリック
-			$(function(){
-				var $anim4 = $('#pyon').limitAnime({
-					width: 80,
-					frames: 2,
-					loop: true,
-					delay: 80
-				});
-
-				$("#pyon").click(function(){
-					$anim4.startAnimate();
-					$anim4.stopAnimate();
-				});
-			});
-
-		});
-
-		</script>
-
-
-	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	    <!--[if lt IE 9]>
-	      <script src="js/html5shiv.js"></script>
-	      <script src="js/respond.min.js"></script>
-		  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> 
-	    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+	  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> 
+    <![endif]-->
 	</head>
 
 	<body>
-
 		<div class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -151,8 +62,8 @@
     <div class="container">
 
       <div>
-        <h1>nekosan</h1>
-        <p class="lead">猫の受付</p>
+        <h1 id="header-title">猫の事務所</h1>
+        <p class="lead">どこかクリックすると動きます。</p>
       </div>
 
 			<div id="haikei">
@@ -172,9 +83,7 @@
 
 			<!-- フッター -->
 			<div id="footer" class="container">
-				<p>
-					&copy; Copyright  by HATAKEYAMA-KE
-				</p>
+				<p>&copy; Copyright  by  nekonos.net</p>
 			</div>
 
     </div>
