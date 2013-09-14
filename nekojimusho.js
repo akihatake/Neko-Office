@@ -1,8 +1,12 @@
 /**
  * @author nekonos.net
  */
-msg = "";
-		
+msg = "あああああああああああああああ";
+
+
+/*
+ * クリックイベント処理
+ */		
 $(document).ready(function(){
 	var msgs = new Array();
 //	var msgs[0] = "アサイーのポリフェノールはブルーベリーの18倍";
@@ -47,51 +51,93 @@ $(document).ready(function(){
 //	var msgs[39] = "誕生日をおぼえてもらえないんです‥‥";
 
 
+	/* DOMセット */
+	//　宮沢賢治
+	var $kenji = $('#kenjisan').limitAnime({
+		width: 55,
+		frames: 2,
+		loop: false,
+		delay: 80
+	});
+	// 時計
+	var $clock = $('#clock').limitAnime({
+		width: 110,
+		frames: 2,
+		loop: false,
+		delay: 80
+	});
+	// ポスター
+	var $poster = $('#poster').limitAnime({
+		width: 135,
+		frames: 2,
+		loop: false,
+		delay: 80
+	});
+	// 書類
+	var $paper = $('#paper').limitAnime({
+		width: 90,
+		frames: 2,
+		loop: false,
+		delay: 80
+	});
+	// 案内
+	var $annai = $('#annai').limitAnime({
+		width: 150,
+		frames: 2,
+		loop: false,
+		delay: 80
+	});
 
-	// けんじクリック
+	// 宮沢賢治クリック
 	$(function(){
-		var $anim1 = $('#kenjisan').limitAnime({
-			width: 55,
-			frames: 2,
-			loop: true,
-			delay: 80
+		$kenji.mousedown(function() {
+				$kenji.startAnimate();
 		});
-
-		$("#kenjisan").click(function() {
-			$anim1.startAnimate();
-			$anim1.stopAnimate();
+		$kenji.mouseup(function() {
+				$kenji.css("backgroundPosition","0 0");
 		});
 	});
 
 	// 時計クリック
 	$(function(){
-		var $anim2 = $('#clock').limitAnime({
-			width: 110,
-			frames: 2,
-			loop: true,
-			delay: 80
+		$clock.mousedown(function() {
+				$clock.startAnimate();
 		});
-
-		$("#clock").click(function() {
-			$anim2.startAnimate();
-			$anim2.stopAnimate();
+		$clock.mouseup(function() {
+				$clock.css("backgroundPosition","0 0");
 		});
 	});
 
 	// ポスタークリック
 	$(function(){
-		var $anim3 = $('#poster').limitAnime({
-			width: 135,
-			frames: 2,
-			loop: true,
-			delay: 80
+		$poster.mousedown(function() {
+				$poster.startAnimate();
 		});
-
-		$("#poster").click(function() {
-			$anim3.startAnimate();
-			$anim3.stopAnimate();
+		$poster.mouseup(function() {
+				$poster.css("backgroundPosition","0 0");
 		});
 	});
+
+	// 書類クリック
+	$(function(){
+		$paper.mousedown(function() {
+				$paper.startAnimate();
+		});
+		$paper.mouseup(function() {
+				$paper.css("backgroundPosition","0 0");
+		});
+	});
+
+	// 案内クリック
+	$(function(){
+		$annai.mousedown(function() {
+				$annai.startAnimate();
+		});
+		$annai.mouseup(function() {
+				$annai.css("backgroundPosition","0 0");
+		});
+	});
+
 
 	// コメント表示
 	$(function(){
