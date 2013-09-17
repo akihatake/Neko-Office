@@ -1,5 +1,5 @@
 /* タイトル */
-#header {
+#page_title {
 	width: 480px;
 	margin-left: auto;
 	margin-right: auto;
@@ -16,7 +16,7 @@
 	background-repeat: no-repeat;
 	width: 480px;
 	height: 80px;
-	text-indent: 100%;
+	text-indent: 200%;
 	white-space: nowrap;
 	overflow: hidden;
 }
@@ -169,6 +169,7 @@
  * フッターデザイン
  */		
 #footer {
+	margin-top: 30px;
 	padding-top: 1em;
 	background-color: gray;
 	text-align: right;

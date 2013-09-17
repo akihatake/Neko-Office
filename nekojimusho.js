@@ -170,7 +170,7 @@ $(document).ready(function(){
 			// 猫画像の入れ替え
 			$('#neko_nemui').show();
 			$('#neko_wakeup').hide();
-			$('#hukidasi').hide();
+			$('#hukidasi').fadeOut();
 
 			// アニメ開始
 			$neko_nemui.startAnimate();
