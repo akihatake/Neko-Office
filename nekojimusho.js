@@ -7,7 +7,7 @@
  */		
 $(document).ready(function(){
 	/* メッセージのセット */
-	var msgs = new Array();
+	var msgs = [];
 	msgs[0] = "アサイーのポリフェノールはブルーベリーの18倍";
 	msgs[1] = "ダチョウの卵の重さは約１.５ｋｇ";
 	msgs[2] = "ライターが作られたのはマッチよりも先";
@@ -49,15 +49,21 @@ $(document).ready(function(){
 	msgs[38] = "亀は生まれたときの温度で性別が決まる";
 	msgs[39] = "誕生日をおぼえてもらえないんです‥‥";
 
-	/* イベント用のDOMセット */
+
+	/*
+	 * イベント用のDOMオブジェクトプロパティセット
+	 *
+	 * DOMオブジェクトを都度直接操作するのはかなり遅いので、先に変数に代入してスピードアップ
+	 *
+	 */
 	//　猫
-	var $neko = $('#neko').limitAnime({
+	var $neko_nemui = $('#neko_nemui').limitAnime({
 		width: 100,
 		frames: 9,
 		loop: true,
 		delay: 300
 	});
-	$neko.startAnimate();
+	$neko_nemui.startAnimate();
 	//　宮沢賢治
 	var $kenji = $('#kenjisan').limitAnime({
 		width: 55,
@@ -94,6 +100,9 @@ $(document).ready(function(){
 		delay: 80
 	});
 
+	// 猫固定画像を最初非表示に
+	$('#neko_nemui').show();
+	$('#neko_wakeup').hide();
 
 	/* イベント処理 */
 	// 宮沢賢治クリック
@@ -143,16 +152,28 @@ $(document).ready(function(){
 	});
 	// コメント表示
 	$(function(){
-		$('#neko').click(function(){
-			var result = $('#hukidasi').is(':visible');
+		$('#neko_nemui').click(function(){
+			// 猫アニメ停止
+			$neko_nemui.stopAnimate();
 
-			if (result){
-				$('#hukidasi').hide();
-			} else {
-				var msg = msgs[parseInt(Math.random()*(msgs.length-1))];
-				$('#hukidasi').show('slow');
-				$('#msg').text(msg);
-			}
+			// 猫画像の入れ替え
+			$('#neko_nemui').hide();
+			$('#neko_wakeup').show();
+
+			// 雑学コメント表示切り替え
+			var msg = msgs[parseInt(Math.random()*(msgs.length-1))];
+			$('#hukidasi').show('slow');
+			$('#msg').text(msg);
+		});
+
+		$('#neko_wakeup').click(function(){
+			// 猫画像の入れ替え
+			$('#neko_nemui').show();
+			$('#neko_wakeup').hide();
+			$('#hukidasi').hide();
+
+			// アニメ開始
+			$neko_nemui.startAnimate();
 		});
 	});
 });

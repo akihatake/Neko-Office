@@ -28,6 +28,7 @@
 	background: url('images/haikei.png') no-repeat 0 0;
 	width: 480px;
 	height: 360px;
+	z-index: 1;
 }
 
 
@@ -37,13 +38,27 @@
  */
 
 /* 猫 */
-#neko {
+#neko_nemui {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	z-index:2;
+	z-index: 3;
 	position: absolute;
 	background-image: url('images/neko-anime.png');
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 120px;
+	top: 133px;
+	left: 295px;
+}
+
+#neko_wakeup {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	z-index: 4;
+	position: absolute;
+	background-image: url('images/neko.png');
 	background-repeat: no-repeat;
 	width: 100px;
 	height: 120px;
@@ -54,9 +69,9 @@
 /* ポスター */
 #poster {
 	display: inline-block;
-	*display: inline;                 
+	*display: inline;
 	*zoom: 1;
-	z-index:1;
+	z-index: 2;
 	position: absolute;
 	background-image: url('images/poster.png');
 	background-repeat: no-repeat;
@@ -71,7 +86,7 @@
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	z-index:3;
+	z-index: 2;
 	position: absolute;
 	background-image: url('images/kenjisan.png');
 	background-repeat: no-repeat;
@@ -86,7 +101,7 @@
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	z-index:4;
+	z-index: 3;
 	position: absolute;
 	background-image: url('images/tokei.png');
 	background-repeat: no-repeat;
@@ -101,7 +116,7 @@
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	z-index:5;
+	z-index: 5;
 	position: absolute;
 	background-image: url('images/paper.png');
 	background-repeat: no-repeat;
@@ -116,7 +131,7 @@
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	z-index:6;
+	z-index: 6;
 	position: absolute;
 	background-image: url('images/annai.png');
 	background-repeat: no-repeat;
@@ -134,7 +149,7 @@
 	position: absolute;
 	background-image: url('images/hukidasi.png');
 	background-repeat: no-repeat;
-	z-index:7;
+	z-index: 10;
 	width: 280px;
 	height: 150px;
 	top: 90px;
