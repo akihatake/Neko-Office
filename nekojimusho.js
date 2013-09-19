@@ -109,48 +109,60 @@ $(document).ready(function(){
 	$(function(){
 		$kenji.bind({
 			'touchstart mousedown': function(e) {
+				event.preventDefault();
 				$kenji.startAnimate();
 			},
 			'touchend mouseup': function(e) {
 				$kenji.css("backgroundPosition","0 0");
 			}
 		});
-
 	});
 	// 時計クリック
 	$(function(){
-		$clock.mousedown(function() {
+		$clock.bind({
+			'touchstart mousedown': function(e) {
+				event.preventDefault();
 				$clock.startAnimate();
-		});
-		$clock.mouseup(function() {
+			},
+			'touchend mouseup': function(e) {
 				$clock.css("backgroundPosition","0 0");
+			}
 		});
 	});
 	// ポスタークリック
 	$(function(){
-		$poster.mousedown(function() {
+		$poster.bind({
+			'touchstart mousedown': function(e) {
+				event.preventDefault();
 				$poster.startAnimate();
-		});
-		$poster.mouseup(function() {
+			},
+			'touchend mouseup': function(e) {
 				$poster.css("backgroundPosition","0 0");
+			}
 		});
 	});
 	// 書類クリック
 	$(function(){
-		$paper.mousedown(function() {
+		$paper.bind({
+			'touchstart mousedown': function(e) {
+				event.preventDefault();
 				$paper.startAnimate();
-		});
-		$paper.mouseup(function() {
+			},
+			'touchend mouseup': function(e) {
 				$paper.css("backgroundPosition","0 0");
+			}
 		});
 	});
 	// 案内クリック
 	$(function(){
-		$annai.mousedown(function() {
+		$annai.bind({
+			'touchstart mousedown': function(e) {
+				event.preventDefault();
 				$annai.startAnimate();
-		});
-		$annai.mouseup(function() {
+			},
+			'touchend mouseup': function(e) {
 				$annai.css("backgroundPosition","0 0");
+			}
 		});
 	});
 	// コメント表示
