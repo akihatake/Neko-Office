@@ -107,12 +107,15 @@ $(document).ready(function(){
 	/* イベント処理 */
 	// 宮沢賢治クリック
 	$(function(){
-		$kenji.mousedown(function() {
+		$kenji.bind({
+			'touchstart mousedown': function(e) {
 				$kenji.startAnimate();
-		});
-		$kenji.mouseup(function() {
+			},
+			'touchend mouseup': function(e) {
 				$kenji.css("backgroundPosition","0 0");
+			}
 		});
+
 	});
 	// 時計クリック
 	$(function(){
