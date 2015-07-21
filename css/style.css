@@ -11,7 +11,7 @@
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  background-image: url('images/title.png');
+  background-image: url('/images/title.png');
   background-repeat: no-repeat;
   width: 480px;
   height: 80px;
@@ -24,7 +24,7 @@
 #haikei {
   margin: 0 auto;
   position: relative;
-  background: url('images/haikei.png') no-repeat 0 0;
+  background: url('/images/haikei.png') no-repeat 0 0;
   width: 480px;
   height: 360px;
   z-index: 1;
@@ -41,7 +41,7 @@
   *zoom: 1;
   z-index: 3;
   position: absolute;
-  background-image: url('images/neko-anime.png');
+  background-image: url('/images/neko-anime.png');
   background-repeat: no-repeat;
   width: 100px;
   height: 120px;
@@ -54,7 +54,7 @@
   *zoom: 1;
   z-index: 4;
   position: absolute;
-  background-image: url('images/neko.png');
+  background-image: url('/images/neko.png');
   background-repeat: no-repeat;
   width: 100px;
   height: 120px;
@@ -69,7 +69,7 @@
   *zoom: 1;
   z-index: 2;
   position: absolute;
-  background-image: url('images/poster.png');
+  background-image: url('/images/poster.png');
   background-repeat: no-repeat;
   width: 135px;
   height: 145px;
@@ -84,7 +84,7 @@
   *zoom: 1;
   z-index: 2;
   position: absolute;
-  background-image: url('images/kenjisan.png');
+  background-image: url('/images/kenjisan.png');
   background-repeat: no-repeat;
   width: 55px;
   height: 77px;
@@ -99,7 +99,7 @@
   *zoom: 1;
   z-index: 3;
   position: absolute;
-  background-image: url('images/tokei.png');
+  background-image: url('/images/tokei.png');
   background-repeat: no-repeat;
   width: 110px;
   height: 55px;
@@ -114,7 +114,7 @@
   *zoom: 1;
   z-index: 5;
   position: absolute;
-  background-image: url('images/paper.png');
+  background-image: url('/images/paper.png');
   background-repeat: no-repeat;
   width: 90px;
   height: 110px;
@@ -129,7 +129,7 @@
   *zoom: 1;
   z-index: 6;
   position: absolute;
-  background-image: url('images/annai.png');
+  background-image: url('/images/annai.png');
   background-repeat: no-repeat;
   width: 150px;
   height: 70px;
@@ -143,7 +143,7 @@
  */
 #hukidasi {
   position: absolute;
-  background-image: url('images/hukidasi.png');
+  background-image: url('/images/hukidasi.png');
   background-repeat: no-repeat;
   z-index: 10;
   width: 280px;
