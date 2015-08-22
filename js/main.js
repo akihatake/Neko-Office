@@ -115,9 +115,9 @@ $(document).ready(function () {
    */
   // 宮沢賢治クリック
   $(function () {
-    $kenji.bind({
+    $kenji.on({
       'touchstart mousedown': function (e) {
-        event.preventDefault();
+        e.preventDefault();
         $kenji.startAnimate();
       },
       'touchend mouseup': function (e) {
@@ -128,9 +128,9 @@ $(document).ready(function () {
 
   // 時計クリック
   $(function () {
-    $clock.bind({
+    $clock.on({
       'touchstart mousedown': function (e) {
-        event.preventDefault();
+        e.preventDefault();
         $clock.startAnimate();
       },
       'touchend mouseup': function (e) {
@@ -141,9 +141,9 @@ $(document).ready(function () {
 
   // ポスタークリック
   $(function () {
-    $poster.bind({
+    $poster.on({
       'touchstart mousedown': function (e) {
-        event.preventDefault();
+        e.preventDefault();
         $poster.startAnimate();
       },
       'touchend mouseup': function (e) {
@@ -154,9 +154,9 @@ $(document).ready(function () {
 
   // 書類クリック
   $(function () {
-    $paper.bind({
+    $paper.on({
       'touchstart mousedown': function (e) {
-        event.preventDefault();
+        e.preventDefault();
         $paper.startAnimate();
       },
       'touchend mouseup': function (e) {
@@ -167,9 +167,9 @@ $(document).ready(function () {
 
   // 案内クリック
   $(function () {
-    $annai.bind({
+    $annai.on({
       'touchstart mousedown': function (e) {
-        event.preventDefault();
+        e.preventDefault();
         $annai.startAnimate();
       },
       'touchend mouseup': function (e) {
@@ -180,7 +180,7 @@ $(document).ready(function () {
 
   // コメント表示
   $(function () {
-    $('#neko_nemui').click(function () {
+    $('#neko_nemui').on('click', function () {
       // 猫アニメ停止
       $neko_nemui.stopAnimate();
 
@@ -194,7 +194,7 @@ $(document).ready(function () {
       $('#msg').text(msg);
     });
 
-    $('#neko_wakeup').click(function () {
+    $('#neko_wakeup').on('click', function () {
       // 猫画像の入れ替え
       $('#neko_nemui').show();
       $('#neko_wakeup').hide();
