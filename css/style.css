@@ -21,7 +21,7 @@
 }
 
 /* 背景 */
-#haikei {
+#frame {
   margin: 0 auto;
   position: relative;
   background: url('/images/haikei.png') no-repeat 0 0;
@@ -141,7 +141,7 @@
 /*
  * 猫のコメント枠
  */
-#hukidasi {
+#fukidashi {
   position: absolute;
   background-image: url('/images/hukidasi.png');
   background-repeat: no-repeat;
@@ -152,7 +152,7 @@
   left: 20px;
   display: none;
 }
-#hukidasi p {
+#fukidashi p {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 15px;
