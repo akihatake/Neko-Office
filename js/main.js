@@ -2,8 +2,9 @@
  * @author nekonos.net
  */
 
-/* 雑学コメントのセット */
-var msgs = [];  // 配列初期化
+
+// 雑学コメントのセット
+var msgs = [];
 msgs.push('アサイーのポリフェノールはブルーベリーの18倍');
 msgs.push('ダチョウの卵の重さは約１.５ｋｇ');
 msgs.push('ライターが作られたのはマッチよりも先');
@@ -45,72 +46,70 @@ msgs.push('「安全第一」の続きは「品質第二」「生産第三」');
 msgs.push('亀は生まれたときの温度で性別が決まる');
 msgs.push('誕生日をおぼえてもらえないんです‥‥');
 
+// 画像のプリロード
+var clockShort = $('<img />').attr('src', '/images/tokei03.png').attr('class', 'clock').attr('id', 'short');
+var clockLong = $('<img />').attr('src', '/images/tokei04.png').attr('class', 'clock').attr('id', 'long');
 
-//
-// HTML読み込み後の処理
-//
+
+
+/**
+ * HTML読み込み後の処理
+ */
 $(function () {
-  /*
-   * イベント用のDOMオブジェクトプロパティセット
-   * DOMオブジェクトを都度直接操作するのはかなり遅いので、先に変数に代入してスピードアップ
-   */
-  // 描画エリア
-  var frame = $('#frame');
+  // DOMオブジェクトを最初にキャッシュしてスピードアップ
+  var frame = $('#frame');              // 描画エリア
+  var fukidashi = $('#fukidashi');      // 吹き出し
+  var neko_nemui = $('#neko_nemui');    // 眠い猫
+  var neko_wakeup = $('#neko_wakeup');  // 起きてる猫
+  var kenji = $('#kenjisan');           // 賢治
+  var clock = $('#clockFrame');         // 時計
+  var animeClock = $('#animeClock');    // アニメ用時計
+  var realClock = $('#realClock');      // リアル時計
+  var poster = $('#poster');            // ポスター
+  var paper = $('#paper');              // 書類
+  var annai = $('#annai');              // 案内
+  var dongri = $('#dongri');            // どんぐり
 
-  // 吹き出し
-  var fukidashi = $('#fukidashi');
-
-  // 猫
-  var neko_nemui = $('#neko_nemui').limitAnime({
+  // アニメのセット
+  neko_nemui.limitAnime({
     width: 100,
     frames: 9,
     loop: true,
     delay: 300
   });
-  var neko_wakeup = $('#neko_wakeup');
-
-  // 宮沢賢治
-  var kenji = $('#kenjisan').limitAnime({
+  kenji.limitAnime({
     width: 55,
     frames: 2,
     loop: false,
     delay: 80
   });
-
-  // 時計
-  var clock = $('#clock').limitAnime({
+  animeClock.limitAnime({
     width: 110,
     frames: 2,
     loop: false,
     delay: 80
   });
-
-  // ポスター
-  var poster = $('#poster').limitAnime({
+  poster.limitAnime({
     width: 135,
     frames: 2,
     loop: false,
     delay: 80
   });
-
-  // 書類
-  var paper = $('#paper').limitAnime({
+  paper.limitAnime({
     width: 90,
     frames: 2,
     loop: false,
     delay: 80
   });
-
-  // 案内
-  var annai = $('#annai').limitAnime({
+  annai.limitAnime({
     width: 150,
     frames: 2,
     loop: false,
     delay: 80
   });
-  
 
-  /*
+
+  /**
    * イベント処理
    */
   function setEvent() {
@@ -129,10 +128,14 @@ $(function () {
     clock.on({
       'touchstart mousedown': function (e) {
         e.preventDefault();
-        clock.startAnimate();
+        $('#realClock').hide();
+        $('#animeClock').show();
+        animeClock.startAnimate();
       },
       'touchend mouseup': function (e) {
-        clock.css("backgroundPosition", "0 0");
+        animeClock.css("backgroundPosition", "0 0");
+        $('#animeClock').hide();
+        $('#realClock').show();
       }
     });
 
@@ -183,7 +186,6 @@ $(function () {
       fukidashi.html('<p>' + msg + '</p>');
       fukidashi.fadeIn('fast');
     });
-
     // 雑学非表示
     neko_wakeup.on('click', function () {
       // 吹き出しを消す
@@ -195,10 +197,24 @@ $(function () {
       neko_wakeup.hide();
       neko_nemui.startAnimate();
     });
+    
+    // どんぐりクリック
+    dongri.on('click', function () {
+      // 雑学を取得
+      var msg = msgs[parseInt(Math.random() * (msgs.length - 1))];
+
+      // どんぐりの動作制御
+      dongri.css('background-image','url("/images/dongri.png")');
+
+      // 吹き出しを表示
+      fukidashi.html('<p>' + msg + '</p>');
+      fukidashi.fadeIn('fast');
+    });
+    
   }
 
 
-  /*
+  /**
    * 初期表示処理
    */
   function initDsp() {
@@ -209,16 +225,55 @@ $(function () {
     neko_nemui.show();
     neko_wakeup.hide();
     neko_nemui.startAnimate();
+
+    // 時計
+    animeClock.hide();
+    realClock.append(clockLong).append(clockShort);
+    realClock.show();
   
     // 全体表示
     frame.fadeIn(1800);
   }
 
 
-  /*
+  /**
    * メイン処理
    */
   setEvent();
   initDsp();
-
+	timerID = setInterval("moveTimer()", 1000);
 });
+
+
+/*
+ * 時計を動かす
+ */
+function moveTimer() {
+	var date, Hou, Min, Sec, hDeg, mDeg, sDeg;
+
+	//日付
+	date = new Date();
+	//時間取得
+	Hou = date.getHours();
+	Min = date.getMinutes();
+	Sec = date.getSeconds();
+	//針の角度取得
+	hDeg = (Hou % 12) * (360 / 12);
+	mDeg = Min * (360 / 60);
+	sDeg = Sec * (360 / 60);
+	//角度調整
+	hDeg += (Min / 60) * (360 / 12);
+	mDeg += (Sec / 60) * (360 / 60);
+
+	//短針の表示
+	$('#short').css('transform', 'rotate(' + hDeg + 'deg)');
+	$('#short').css('MozTransform', 'rotate(' + hDeg + 'deg)');
+	$('#short').css('WebkitTransform', 'rotate(' + hDeg + 'deg)');
+	$('#short').css('msTransform', 'rotate(' + hDeg + 'deg)');
+
+	//長針の表示
+	$('#long').css('transform', 'rotate(' + mDeg + 'deg)');
+	$('#long').css('MozTransform', 'rotate(' + mDeg + 'deg)');
+	$('#long').css('WebkitTransform', 'rotate(' + mDeg + 'deg)');
+	$('#long').css('msTransform', 'rotate(' + mDeg + 'deg)');
+};

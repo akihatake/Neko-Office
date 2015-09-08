@@ -24,7 +24,7 @@
 #frame {
   margin: 0 auto;
   position: relative;
-  background: url('/images/haikei.png') no-repeat 0 0;
+  background: url('/images/background.png') no-repeat 0 0;
   width: 480px;
   height: 360px;
   z-index: 1;
@@ -41,7 +41,7 @@
   *zoom: 1;
   z-index: 3;
   position: absolute;
-  background-image: url('/images/neko-anime.png');
+  background-image: url('/images/neko01.png');
   background-repeat: no-repeat;
   width: 100px;
   height: 120px;
@@ -54,15 +54,15 @@
   *zoom: 1;
   z-index: 4;
   position: absolute;
-  background-image: url('/images/neko.png');
+  background-image: url('/images/neko02.png');
   background-repeat: no-repeat;
   width: 100px;
   height: 120px;
   top: 133px;
   left: 295px;
 }
-/* ポスター */
 
+/* ポスター */
 #poster {
   display: inline-block;
   *display: inline;
@@ -93,19 +93,50 @@
 }
 
 /* 時計 */
-#clock {
+#clockFrame {
   display: inline-block;
   *display: inline;
   *zoom: 1;
   z-index: 3;
   position: absolute;
-  background-image: url('/images/tokei.png');
-  background-repeat: no-repeat;
   width: 110px;
   height: 55px;
   top: 30px;
   left: 150px;
 }
+#animeClock {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  z-index: 3;
+  position: absolute;
+  background-image: url('/images/tokei01.png');
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 55px;
+  top: 0px;
+  left: 0px;
+}
+#realClock {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  z-index: 3;
+  position: absolute;
+  background-image: url('/images/tokei02.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 55px;
+  height: 55px;
+  top: 0px;
+  right: 0px;
+}
+.clock {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 
 /* 書類 */
 #paper {
@@ -137,6 +168,21 @@
   left: 120px;
 }
 
+/* どんぐり */
+#dongri {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  z-index: 6;
+  position: absolute;
+  background-image: url('/images/dongri.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 50px;
+  top: 260px;
+  left: 50px;
+}
 
 /*
  * 猫のコメント枠
