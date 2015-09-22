@@ -175,7 +175,7 @@ $(function () {
     // 雑学表示
     neko_nemui.on('click', function () {
       // 雑学を取得
-      var msg = msgs[parseInt(Math.random() * (msgs.length - 1))];
+      var msg = msgs[Math.floor(Math.random() * (msgs.length - 1))];
 
       // 猫の動作制御
       neko_nemui.stopAnimate();
@@ -201,7 +201,7 @@ $(function () {
     // どんぐりクリック
     dongri.on('click', function () {
       // 雑学を取得
-      var msg = msgs[parseInt(Math.random() * (msgs.length - 1))];
+      var msg = msgs[Math.floor(Math.random() * (msgs.length - 1))];
 
       // どんぐりの動作制御
       dongri.css('background-image','url("/images/dongri.png")');
@@ -241,7 +241,7 @@ $(function () {
    */
   setEvent();
   initDsp();
-	timerID = setInterval("moveTimer()", 1000);
+  var intervalID = setInterval(moveTimer, 1000);
 });
 
 
@@ -249,31 +249,34 @@ $(function () {
  * 時計を動かす
  */
 function moveTimer() {
-	var date, Hou, Min, Sec, hDeg, mDeg, sDeg;
+	var date, hr, min, sec, hrDeg, minDeg, secDeg;
 
 	//日付
 	date = new Date();
+
 	//時間取得
-	Hou = date.getHours();
-	Min = date.getMinutes();
-	Sec = date.getSeconds();
+	hr = date.getHours();
+	min = date.getMinutes();
+	sec = date.getSeconds();
+
 	//針の角度取得
-	hDeg = (Hou % 12) * (360 / 12);
-	mDeg = Min * (360 / 60);
-	sDeg = Sec * (360 / 60);
+	hrDeg = (hr % 12) * (360 / 12);
+	minDeg = min * (360 / 60);
+	secDeg = sec * (360 / 60);
+
 	//角度調整
-	hDeg += (Min / 60) * (360 / 12);
-	mDeg += (Sec / 60) * (360 / 60);
+	hrDeg += (min / 60) * (360 / 12);
+	minDeg += (sec / 60) * (360 / 60);
 
 	//短針の表示
-	$('#short').css('transform', 'rotate(' + hDeg + 'deg)');
-	$('#short').css('MozTransform', 'rotate(' + hDeg + 'deg)');
-	$('#short').css('WebkitTransform', 'rotate(' + hDeg + 'deg)');
-	$('#short').css('msTransform', 'rotate(' + hDeg + 'deg)');
+	$('#short').css('transform', 'rotate(' + hrDeg + 'deg)');
+	$('#short').css('MozTransform', 'rotate(' + hrDeg + 'deg)');
+	$('#short').css('WebkitTransform', 'rotate(' + hrDeg + 'deg)');
+	$('#short').css('msTransform', 'rotate(' + hrDeg + 'deg)');
 
 	//長針の表示
-	$('#long').css('transform', 'rotate(' + mDeg + 'deg)');
-	$('#long').css('MozTransform', 'rotate(' + mDeg + 'deg)');
-	$('#long').css('WebkitTransform', 'rotate(' + mDeg + 'deg)');
-	$('#long').css('msTransform', 'rotate(' + mDeg + 'deg)');
+	$('#long').css('transform', 'rotate(' + minDeg + 'deg)');
+	$('#long').css('MozTransform', 'rotate(' + minDeg + 'deg)');
+	$('#long').css('WebkitTransform', 'rotate(' + minDeg + 'deg)');
+	$('#long').css('msTransform', 'rotate(' + minDeg + 'deg)');
 };
